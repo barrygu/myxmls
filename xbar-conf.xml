@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xbar-conf.xsl"?>
+<crossbar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xbar-conf.xsd">
+    <crossbar-inputs>
+        <input channels="2" id="0" name="TUNER_FM_OUT" offset="0"/>
+        <input channels="2" id="1" name="TUNER_AM_OUT" offset="2"/>
+        <input channels="2" id="2" name="TUNER_TA_OUT" offset="4"/>
+        <input channels="2" id="3" name="SDARS_OUT" offset="6"/>
+        <input channels="2" id="4" name="TUNER_TV_OUT" offset="8"/>
+        <input channels="2" id="5" name="BROW_FREE_OUT" offset="10"/>
+        <input channels="2" id="6" name="BROW_RESTRICTED_OUT" offset="12"/>
+        <input channels="2" id="7" name="BROW_DIBA_OUT" offset="14"/>
+        <input channels="2" id="8" name="BT_AUDIO_OUT" offset="16"/>
+        <input channels="2" id="9" name="ACOMFORT_OUT" offset="18"/>
+        <input channels="2" id="10" name="MEDIA_OUT" offset="20"/>
+        <input channels="2" id="11" name="PNAP_SLEEP_OUT" offset="22"/>
+        <input channels="2" id="12" name="PNAP_WAKEUP_OUT" offset="24"/>
+        <input channels="2" id="13" name="IP_RADIO_OUT" offset="26"/>
+        <input channels="2" id="14" name="CARPLAY_MEDIA_OUT" offset="28"/>
+        <input channels="2" id="15" name="AAP_MEDIA_OUT" offset="30"/>
+        <input channels="2" id="16" name="CARLIFE_MEDIA_OUT" offset="32"/>
+        <input channels="2" id="17" name="MIRRORLINK_OUT" offset="34"/>
+        <input channels="9" id="18" name="MEDIA_MC_OUT" offset="36"/>
+        <input channels="2" id="19" name="MEDIA_DOWNMIX_OUT" offset="45"/>
+        <input channels="9" id="20" name="TUNER_TV_MC_OUT" offset="47"/>
+        <input channels="2" id="21" name="TUNERTV_DOWNMIX_OUT" offset="56"/>
+        <input channels="1" id="22" name="SDS_RSUL_OUT" offset="58"/>
+        <input channels="1" id="23" name="SDS_RSUR_OUT" offset="59"/>
+        <input channels="1" id="24" name="TTS_RSUL_OUT" offset="60"/>
+        <input channels="1" id="25" name="TTS_RSUR_OUT" offset="61"/>
+        <input channels="1" id="26" name="TOUCH_DRIVER_OUT" offset="62"/>
+        <input channels="1" id="27" name="NOTIFICATION_DRIVER_OUT" offset="63"/>
+        <input channels="1" id="28" name="EXCITER_COD_OUT" offset="64"/>
+        <input channels="1" id="29" name="AAP_SYSTEM_OUT" offset="65"/>
+        <input channels="1" id="30" name="CARPLAY_ALTERNATE_OUT" offset="66"/>
+        <input channels="1" id="31" name="CARPLAY_ALTERNATEUI_OUT" offset="67"/>
+        <input channels="1" id="32" name="NAVI_OUT" offset="68"/>
+        <input channels="1" id="33" name="AAP_GUIDANCE_OUT" offset="69"/>
+        <input channels="1" id="34" name="CARLIFE_NAVI_OUT" offset="70"/>
+        <input channels="2" id="35" name="ENT_RSE_OUT" offset="71"/>
+        <input channels="9" id="36" name="MCH_RSE_OUT" offset="73"/>
+        <input channels="2" id="37" name="DMX_RSE_OUT" offset="82"/>
+        <input channels="2" id="38" name="EXCITER_RSE_OUT" offset="84"/>
+    </crossbar-inputs>
+    <crossbar-zone-out>
+        <zone channels="25" id="0" name="zone0" offset="0"/>
+    </crossbar-zone-out>
+    <crossbar-zone0-in>
+        <input channels="2" id="0" name="Stereo1" offset="0"/>
+        <input channels="2" id="1" name="Stereo4" offset="2"/>
+        <input channels="9" id="2" name="MultiCh" offset="4"/>
+        <input channels="1" id="3" name="Navi" offset="13"/>
+        <input channels="1" id="4" name="Acoustic" offset="14"/>
+        <input channels="1" id="5" name="Touch" offset="15"/>
+        <input channels="2" id="6" name="Stereo2" offset="16"/>
+        <input channels="2" id="7" name="Stereo3" offset="18"/>
+        <input channels="1" id="8" name="Mono1" offset="20"/>
+        <input channels="1" id="9" name="Mono2" offset="21"/>
+        <input channels="1" id="10" name="ExciterCod" offset="22"/>
+        <input channels="2" id="11" name="ExciterRSU" offset="23"/>
+    </crossbar-zone0-in>
+    <crossbar-connects>
+        <conn id="0" sourceIdx="0" zoneIdx="0" sinkIdx="0"/>
+        <conn id="1" sourceIdx="10" zoneIdx="0" sinkIdx="1"/>
+    </crossbar-connects>
+    <crossbar-output-devices>
+        <device channels="4" id="0" name="alsa_output.Stereo" offset="0"/>
+        <device channels="10" id="1" name="alsa_output.MC_NAVIDri" offset="4"/>
+        <device channels="2" id="2" name="alsa_output.Acoustic_Touch" offset="14"/>
+        <device channels="6" id="3" name="alsa_output.RSU" offset="16"/>
+        <device channels="3" id="4" name="alsa_output.Exciter" offset="22"/>
+    </crossbar-output-devices>
+</crossbar>

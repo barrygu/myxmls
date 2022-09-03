@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="xbar-conf-alt.xsl"?>
+<crossbar>
+    <crossbar-inputs>
+        <TUNER_FM_OUT channels="2" id="0" offset="0"/>
+        <TUNER_AM_OUT channels="2" id="1" offset="2"/>
+        <TUNER_TA_OUT channels="2" id="2" offset="4"/>
+        <SDARS_OUT channels="2" id="3" offset="6"/>
+        <TUNER_TV_OUT channels="2" id="4" offset="8"/>
+        <BROW_FREE_OUT channels="2" id="5" offset="10"/>
+        <BROW_RESTRICTED_OUT channels="2" id="6" offset="12"/>
+        <BROW_DIBA_OUT channels="2" id="7" offset="14"/>
+        <BT_AUDIO_OUT channels="2" id="8" offset="16"/>
+        <ACOMFORT_OUT channels="2" id="9" offset="18"/>
+        <MEDIA_OUT channels="2" id="10" offset="20"/>
+        <PNAP_SLEEP_OUT channels="2" id="11" offset="22"/>
+        <PNAP_WAKEUP_OUT channels="2" id="12" offset="24"/>
+        <IP_RADIO_OUT channels="2" id="13" offset="26"/>
+        <CARPLAY_MEDIA_OUT channels="2" id="14" offset="28"/>
+        <AAP_MEDIA_OUT channels="2" id="15" offset="30"/>
+        <CARLIFE_MEDIA_OUT channels="2" id="16" offset="32"/>
+        <MIRRORLINK_OUT channels="2" id="17" offset="34"/>
+        <MEDIA_MC_OUT channels="9" id="18" offset="36"/>
+        <MEDIA_DOWNMIX_OUT channels="2" id="19" offset="45"/>
+        <TUNER_TV_MC_OUT channels="9" id="20" offset="47"/>
+        <TUNERTV_DOWNMIX_OUT channels="2" id="21" offset="56"/>
+        <SDS_RSUL_OUT channels="1" id="22" offset="58"/>
+        <SDS_RSUR_OUT channels="1" id="23" offset="59"/>
+        <TTS_RSUL_OUT channels="1" id="24" offset="60"/>
+        <TTS_RSUR_OUT channels="1" id="25" offset="61"/>
+        <TOUCH_DRIVER_OUT channels="1" id="26" offset="62"/>
+        <NOTIFICATION_DRIVER_OUT channels="1" id="27" offset="63"/>
+        <EXCITER_COD_OUT channels="1" id="28" offset="64"/>
+        <AAP_SYSTEM_OUT channels="1" id="29" offset="65"/>
+        <CARPLAY_ALTERNATE_OUT channels="1" id="30" offset="66"/>
+        <CARPLAY_ALTERNATEUI_OUT channels="1" id="31" offset="67"/>
+        <NAVI_OUT channels="1" id="32" offset="68"/>
+        <AAP_GUIDANCE_OUT channels="1" id="33" offset="69"/>
+        <CARLIFE_NAVI_OUT channels="1" id="34" offset="70"/>
+        <ENT_RSE_OUT channels="2" id="35" offset="71"/>
+        <MCH_RSE_OUT channels="9" id="36" offset="73"/>
+        <DMX_RSE_OUT channels="2" id="37" offset="82"/>
+        <EXCITER_RSE_OUT channels="2" id="38" offset="84"/>
+    </crossbar-inputs>
+    <crossbar-zone-out>
+        <zone0 channels="25" id="0" offset="0"/>
+    </crossbar-zone-out>
+    <crossbar-zone0-in>
+        <Stereo1 channels="2" id="0" offset="0"/>
+        <Stereo4 channels="2" id="1" offset="2"/>
+        <MultiCh channels="9" id="2" offset="4"/>
+        <Navi channels="1" id="3" offset="13"/>
+        <Acoustic channels="1" id="4" offset="14"/>
+        <Touch channels="1" id="5" offset="15"/>
+        <Stereo2 channels="2" id="6" offset="16"/>
+        <Stereo3 channels="2" id="7" offset="18"/>
+        <Mono1 channels="1" id="8" offset="20"/>
+        <Mono2 channels="1" id="9" offset="21"/>
+        <ExciterCod channels="1" id="10" offset="22"/>
+        <ExciterRSU channels="2" id="11" offset="23"/>
+    </crossbar-zone0-in>
+    <crossbar-connects>
+        <conn id="0" sourceIdx="0" zoneIdx="0" sinkIdx="0"/>
+    </crossbar-connects>
+    <crossbar-output-devices>
+        <alsa_output.Stereo channels="4" id="0" offset="0"/>
+        <alsa_output.MC_NAVIDri channels="10" id="1" offset="4"/>
+        <alsa_output.Acoustic_Touch channels="2" id="2" offset="14"/>
+        <alsa_output.RSU channels="6" id="3" offset="16"/>
+        <alsa_output.Exciter channels="3" id="4" offset="22"/>
+    </crossbar-output-devices>
+</crossbar>
+

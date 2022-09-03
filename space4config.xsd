@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" vc:minVersion="1.1">
+  <xs:simpleType name="tVersion">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="v\d+\.\d+\.\d+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:group name="gBaseType">
+    <xs:sequence>
+      <xs:element name="Index" type="xs:int" />
+      <xs:element name="Type" type="xs:string" />
+      <xs:element name="Name" type="xs:string" />
+    </xs:sequence>
+  </xs:group>
+  <xs:complexType name="BaseType">
+    <xs:sequence>
+      <xs:group ref="gBaseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tSampleFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="U8" />
+      <xs:enumeration value="ALAW" />
+      <xs:enumeration value="ULAW" />
+      <xs:enumeration value="S16LE" />
+      <xs:enumeration value="S16BE" />
+      <xs:enumeration value="FLOAT32LE" />
+      <xs:enumeration value="FLOAT32BE" />
+      <xs:enumeration value="S32LE" />
+      <xs:enumeration value="S32BE" />
+      <xs:enumeration value="S24LE" />
+      <xs:enumeration value="S24BE" />
+      <xs:enumeration value="S24_32LE" />
+      <xs:enumeration value="S24_32BE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tSampleRate">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="8000" />
+      <xs:enumeration value="11025" />
+      <xs:enumeration value="16000" />
+      <xs:enumeration value="22050" />
+      <xs:enumeration value="24000" />
+      <xs:enumeration value="32000" />
+      <xs:enumeration value="44100" />
+      <xs:enumeration value="48000" />
+      <xs:enumeration value="96000" />
+      <xs:enumeration value="192000" />
+      <xs:enumeration value="384000" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tIFs">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="IPC" />
+      <xs:enumeration value="I2S" />
+      <xs:enumeration value="UAIF" />
+      <xs:enumeration value="TDM" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tPolarity">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Positive" />
+      <xs:enumeration value="Negtive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="isEnabled">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Enabled" />
+      <xs:enumeration value="Disabled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tBuffType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Discrete" />
+      <xs:enumeration value="Continuous" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tFunc">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Mute" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tTxRx">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1Rx" />
+      <xs:enumeration value="1Tx" />
+      <xs:enumeration value="1TxRx" />
+      <xs:enumeration value="2Rx" />
+      <xs:enumeration value="2Tx" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="YesNo">
+    <xs:annotation>
+      <xs:documentation>The YesNo type is used for boolean-like attributes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Yes" />
+      <xs:enumeration value="No" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tClkMode">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Master" />
+      <xs:enumeration value="Slave" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:group name="gSampleSpec">
+    <xs:sequence>
+      <xs:element name="SampleFormat" type="tSampleFormat" />
+      <xs:element name="SampleRate" type="tSampleRate" />
+      <xs:element name="NumOfChannels" type="xs:int" />
+      <xs:element name="SlotDefinition" type="xs:int" />
+    </xs:sequence>
+  </xs:group>
+  <xs:complexType name="tSampleSpec">
+    <xs:sequence>
+      <xs:group ref="gSampleSpec" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tInterface">
+    <xs:sequence>
+      <xs:element name="Index" type="xs:int" />
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="SampleSpec" type="tSampleSpec" />
+    </xs:sequence>
+    <xs:attribute name="Type" type="tIFs" />
+  </xs:complexType>
+  <xs:complexType name="InterfaceIPC">
+    <xs:complexContent>
+      <xs:extension base="tInterface">
+        <xs:sequence>
+          <xs:element name="Direction" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InterfaceUAIF">
+    <xs:complexContent>
+      <xs:extension base="tInterface">
+        <xs:sequence>
+          <xs:element name="Direction" type="xs:string" />
+          <xs:element name="MainTrigger" type="xs:boolean" />
+          <xs:element name="UAIF_Number" type="xs:int" />
+          <xs:element name="TxRx" type="tTxRx" />
+          <xs:element name="DriveMode" type="tClkMode" />
+          <xs:element name="BCLK_Polarity" type="tPolarity" />
+          <xs:element name="OneBitShift" type="xs:boolean" />
+          <xs:element name="DMA">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" />
+                <xs:element name="EnableFlag" type="isEnabled" />
+                <xs:element name="Function" type="tFunc" />
+                <xs:element name="BufferType" type="tBuffType" />
+                <xs:element name="BufferUpdate" type="YesNo" />
+                <xs:element name="SampleBankLimit" type="xs:int" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tProcessing">
+    <xs:sequence>
+      <xs:group ref="gBaseType" />
+      <xs:element name="FramesOfProcessing" type="xs:int" />
+      <xs:element name="InputInfo" type="tSampleSpec" />
+      <xs:element name="OutputInfo" type="tSampleSpec" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Space4Config">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Versions" />
+        <xs:element ref="Sources" />
+        <xs:element ref="Targets" />
+        <xs:element ref="InputInterfaces" />
+        <xs:element ref="OutputInterfaces" />
+        <xs:element ref="Processings" />
+        <xs:element ref="Crossbars" />
+        <xs:element ref="Streams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Versions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FileFormat" type="tVersion" />
+        <xs:element name="Config" type="tVersion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Source" type="BaseType" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Targets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Target" type="BaseType" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InputInterfaces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Interface" maxOccurs="unbounded">
+          <xs:alternative test="@Type = 'IPC'" type="InterfaceIPC" />
+          <xs:alternative test="@Type = 'UAIF'" type="InterfaceUAIF" />
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutputInterfaces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Interface" maxOccurs="unbounded">
+          <xs:alternative test="@Type = 'IPC'" type="InterfaceIPC" />
+          <xs:alternative test="@Type = 'UAIF'" type="InterfaceUAIF" />
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Processings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Processing" type="tProcessing" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Crossbars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Crossbar" type="tProcessing" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Streams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Stream" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group ref="gBaseType" />
+              <xs:element name="Source" type="xs:int" />
+              <xs:element name="InputInterface" type="xs:int" />
+			  <xs:element name="Buffers">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PeriodSize" type="xs:int" />
+                    <xs:element name="BufferSize" type="xs:int" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Preprocessings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Processing" type="xs:int" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Crossbar" type="xs:int" />
+              <xs:element name="Postprocessings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Processing" type="xs:int" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="OutputInterface" type="xs:int" />
+              <xs:element name="Target" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

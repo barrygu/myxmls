@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="apconf.xsl"?>
+<!-- Harman Audio HAL Audio Processing Configuration file -->
+<audioProcessingConfiguration>
+  <channelmapconf>
+    <!-- SSE Downlink configuration, chmap id is from 1~99 -->
+    <channelmaps uuid="10001,10009,10010">
+        <chmap id="1"
+            name="rcvin"
+            chidx="0"
+            channels="1"
+            io="0"/>
+        <chmap id="2"
+            name="rcvout"
+            chidx="0"
+            channels="1"
+            io="1"/>
+    </channelmaps>
+    <!-- SSE Uplink configuration -->
+    <channelmaps uuid="10006,10007,10008,10011,10012,10018,10019,10020,10029,10030,10031">
+        <chmap id="3"
+            name="micin"
+            chidx="0"
+            channels="2"
+            io="0"/>
+        <chmap id="4"
+            name="refin"
+            chidx="2"
+            channels="2"
+            io="0"/>
+        <chmap id="5"
+            name="micout"
+            chidx="0"
+            channels="4"
+            io="1"/>
+    </channelmaps>
+    <!-- Audioworx Downlink 48kHz configuration, chmap id is from 1~99 -->
+    <channelmaps uuid="10002">
+        <!-- { SET_VALUE(MUSIC_CONTEXT, 0),         SET_VALUE(nrChannelsToUse, 2) }, -->
+        <chmap id="1"
+            name="bus0_media_out"
+            chidx="0"
+            channels="2"
+            io="0"/>
+        <!-- { SET_VALUE(NAVIGATION_CONTEXT, 2),    SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="2"
+            name="bus1_navigation_out"
+            chidx="2"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(VOICE_COMMAND_CONTEXT, 3), SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="3"
+            name="bus2_voice_command_out"
+            chidx="3"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(CALL_RING_CONTEXT, 4),     SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="4"
+            name="bus3_call_ring_out"
+            chidx="4"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(CALL_CONTEXT, 5),          SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="5"
+            name="bus4_call_out"
+            chidx="5"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(ALARM_CONTEXT, 6),         SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="6"
+            name="bus5_alarm_out"
+            chidx="6"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(NOTIFICATION_CONTEXT, 7),  SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="7"
+            name="bus6_notification_out"
+            chidx="7"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(SYSTEMSOUND_CONTEXT, 8),  SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="8"
+            name="bus7_system_sound_out"
+            chidx="8"
+            channels="1"
+            io="0"/>
+         <!-- { SET_VALUE(BLUETOOTH_HPF_DL, 9),  SET_VALUE(nrChannelsToUse, 1) }, -->
+        <chmap id="9"
+            name="bt_downlink"
+            chidx="9"
+            channels="1"
+            io="0"/>
+        <!-- { SET_VALUE(OUTPUT_FRONTLEFT, 0),   SET_VALUE(FRONTLEFT_NCHAN, 1) }, -->
+        <chmap id="10"
+            name="OUTPUT_SPEAKER1"
+            chidx="0"
+            channels="1"
+            io="1"/>
+        <!-- { SET_VALUE(OUTPUT_FRONTRIGHT, 1),  SET_VALUE(FRONTRIGHT_NCHAN, 1) }, -->
+        <chmap id="11"
+            name="OUTPUT_SPEAKER2"
+            chidx="1"
+            channels="1"
+            io="1"/>
+        <!-- { SET_VALUE(OUTPUT_REARLEFT, 2),    SET_VALUE(REARLEFT_NCHAN, 1) }, -->
+        <chmap id="12"
+            name="OUTPUT_SPEAKER3"
+            chidx="2"
+            channels="1"
+            io="1"/>
+        <!-- { SET_VALUE(OUTPUT_REARRIGHT, 3),   SET_VALUE(REARRIGHT_NCHAN, 1) }, -->
+        <chmap id="13"
+            name="OUTPUT_SPEAKER4"
+            chidx="3"
+            channels="1"
+            io="1"/>
+        <!-- { SET_VALUE(OUTPUT_REARRIGHT, 4),   SET_VALUE(REARRIGHT_NCHAN, 1) }, -->
+        <chmap id="14"
+            name="OUTPUT_SPEAKER5"
+            chidx="4"
+            channels="1"
+            io="1"/>
+        <!-- { SET_VALUE(OUTPUT_REARRIGHT, 5),   SET_VALUE(REARRIGHT_NCHAN, 1) }, -->
+        <chmap id="15"
+            name="OUTPUT_SPEAKER6"
+            chidx="5"
+            channels="1"
+            io="1"/>
+        <chmap id="16"
+            name="OUTPUT_REFERENCE0"
+            chidx="6"
+            channels="1"
+            io="1"/>
+        <chmap id="17"
+            name="OUTPUT_REFERENCE1"
+            chidx="7"
+            channels="1"
+            io="1"/>
+        <chmap id="18"
+            name="OUTPUT_VIRTUAL"
+            chidx="8"
+            channels="2"
+            io="1"/>
+    </channelmaps>
+  </channelmapconf>
+</audioProcessingConfiguration>

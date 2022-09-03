@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xs:import namespace="http://www.w3.org/2001/XInclude" schemaLocation="arconf_inc.xsd" />
+  <xs:simpleType name="tVersion">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+(\.\d+){1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tSampleBitWidth">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AUDIO_FORMAT_PCM_16_BIT" />
+      <xs:enumeration value="AUDIO_FORMAT_PCM_32_BIT" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tAccessMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SND_PCM_ACCESS_RW_INTERLEAVED" />
+      <xs:enumeration value="SND_PCM_ACCESS_RW_NONINTERLEAVED" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="playback" />
+      <xs:enumeration value="capture" />
+      <xs:enumeration value="both" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tModuleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MODULE_TYPE_EFFECT_BLOCK" />
+      <xs:enumeration value="MODULE_TYPE_LOOPBACK" />
+      <xs:enumeration value="MODULE_TYPE_DATA_COLLECTOR" />
+      <xs:enumeration value="MODULE_TYPE_CONNECT" />
+      <xs:enumeration value="MODULE_TYPE_DATA_DISPATCHER" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tEmptyString">
+    <xs:restriction base='xs:string'>
+      <xs:length value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="tSampleRate">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:enumeration value="8000" />
+      <xs:enumeration value="16000" />
+      <xs:enumeration value="24000" />
+      <xs:enumeration value="32000" />
+      <xs:enumeration value="44100" />
+      <xs:enumeration value="48000" />
+      <xs:enumeration value="96000" />
+      <xs:enumeration value="192000" />
+      <xs:enumeration value="384000" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="xSampleRate">
+    <xs:union memberTypes="tEmptyString tSampleRate" />
+  </xs:simpleType>
+
+  <xs:simpleType name="e-int">
+    <xs:union memberTypes="tEmptyString xs:positiveInteger" />
+  </xs:simpleType>
+
+  <xs:element name="audioRoutingConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="audioswitch" />
+        <xs:element ref="devicesconf" />
+        <xs:element ref="alsaportsconf" />
+        <xs:element ref="moduleslist" />
+        <xs:element ref="pathconf" />
+        <xs:element ref="xi:include" />
+      </xs:sequence>
+      <xs:attribute name="version" type="tVersion"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="audioswitch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="switch" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="name" type="xs:string" />
+            <xs:attribute name="enable" type="xs:boolean" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name ="tDevice">
+    <xs:attribute name="id" type="xs:positiveInteger" />
+    <xs:attribute name="type" type="xs:string" />
+    <xs:attribute name="source" type="xs:string" />
+    <xs:attribute name="ecnrcase" type="xs:string" use="optional"/>
+    <xs:attribute name="busaddress" type="xs:string" />
+    <xs:attribute name="channelmap" type="xs:string" />
+    <xs:attribute name="rate" type="xSampleRate" />
+  </xs:complexType>
+  <xs:element name="devicesconf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="device" type="tDevice" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="UniqueDevAddr">
+	  <xs:selector xpath="device" /> 
+	  <xs:field xpath="@busaddress" />
+	  <xs:field xpath="@type" />
+    </xs:unique>
+  </xs:element>
+
+  <xs:complexType name ="tAlsa">
+    <xs:attribute name="id" type="xs:positiveInteger" />
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="sndhwdev" type="xs:string"/>
+    <xs:attribute name="vendorid" type="xs:string" use="optional"/>
+    <xs:attribute name="channels" type="xs:int" />
+    <xs:attribute name="rate" type="tSampleRate" />
+    <xs:attribute name="bitwidth" type="tSampleBitWidth" />
+    <xs:attribute name="periodsize" type="xs:int" />
+    <xs:attribute name="periodcount" type="xs:int" />
+    <xs:attribute name="startthreshold" type="xs:int" />
+    <xs:attribute name="stopthreshold" type="xs:int" />
+    <xs:attribute name="silencethreshold" type="xs:int" />
+    <xs:attribute name="silencesize" type="xs:int" />
+    <xs:attribute name="availmin" type="xs:nonNegativeInteger" />
+    <xs:attribute name="clock" type="xs:int" />
+    <xs:attribute name="access" type="tAccessMode" />
+    <xs:attribute name="channelmap" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="alsaportsconf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="port" type="tAlsa" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="UniqueAlsaPort">
+	  <xs:selector xpath="port" /> 
+	  <xs:field xpath="@name" />
+	  <xs:field xpath="@rate" />
+    </xs:unique>
+  </xs:element>
+
+  <xs:complexType name ="tModule">
+    <xs:attribute name="id" type="xs:positiveInteger" />
+    <xs:attribute name="uuid" type="xs:positiveInteger" />
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="type" type="tModuleType" />
+    <xs:attribute name="rate" type="tSampleRate" />
+    <xs:attribute name="channels" type="xs:int" />
+    <xs:attribute name="bitwidth" type="tSampleBitWidth" />
+    <xs:attribute name="periodsize" type="xs:int" />
+    <xs:attribute name="periodcount" type="xs:int" />
+    <xs:attribute name="inputportnum" type="xs:int" />
+    <xs:attribute name="outputportnum" type="xs:int" />
+    <xs:attribute name="threadcount" type="e-int" />
+    <xs:attribute name="library" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="moduleslist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="module" type="tModule" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="UniqueModuleID">
+	  <xs:selector xpath="module" /> 
+	  <xs:field xpath="@uuid" />
+    </xs:unique>
+    <xs:unique name="UniqueModuleName">
+	  <xs:selector xpath="module" /> 
+	  <xs:field xpath="@name" />
+	  <xs:field xpath="@rate" />
+    </xs:unique>
+  </xs:element>
+
+  <xs:complexType name ="tPath">
+    <xs:sequence>
+      <xs:element ref="includes" minOccurs="0"/>
+      <xs:element ref="connections" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="dir" type="tDirection" />
+    <xs:attribute name="mode" type="xs:string" />
+    <xs:attribute name="period" type="e-int" />
+    <xs:attribute name="rate" type="xSampleRate" />
+  </xs:complexType>
+  <xs:element name="pathconf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="path" type="tPath" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="includes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="include" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="pathname" type="xs:string" />
+            <xs:attribute name="type" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="connections">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="connection" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="from" type="xs:string" />
+            <xs:attribute name="outchmap" type="xs:string" />
+            <xs:attribute name="to" type="xs:string" />
+            <xs:attribute name="inchmap" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

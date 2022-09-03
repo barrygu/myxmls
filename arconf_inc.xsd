@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema targetNamespace="http://www.w3.org/2001/XInclude" xmlns:tns="http://www.w3.org/2001/XInclude" xmlns="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="include">
+    <xs:complexType>
+      <xs:attribute name="href" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

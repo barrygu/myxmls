@@ -1,0 +1,18 @@
+<!ELEMENT crossbar (crossbar-inputs, crossbar-zone-out, crossbar-zone0-in, crossbar-connects, crossbar-output-devices)>
+<!ELEMENT crossbar-inputs (key+)>
+<!ELEMENT key (#PCDATA)>
+<!ATTLIST key
+          channels CDATA #REQUIRED
+          id CDATA #REQUIRED
+          name CDATA #REQUIRED
+          offset CDATA #REQUIRED>
+<!ELEMENT crossbar-zone-out (key)>
+<!ELEMENT crossbar-zone0-in (key+)>
+<!ELEMENT crossbar-connects (conn)>
+<!ELEMENT conn (#PCDATA)>
+<!ATTLIST conn
+          id CDATA #REQUIRED
+          sinkIdx CDATA #REQUIRED
+          sourceIdx CDATA #REQUIRED
+          zoneIdx CDATA #REQUIRED>
+<!ELEMENT crossbar-output-devices (key+)>

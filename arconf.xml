@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="arconf.xsl"?>
+<audioRoutingConfiguration version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <audioswitch>
+    <switch name="tinyalsaport" enable="1" />
+    <switch name="interleaved_dl" enable="0" />
+    <switch name="interleaved_ul" enable="0" />
+    <switch name="graph" enable="1" />
+  </audioswitch>
+  <devicesconf>
+    <device id="1" type="AUDIO_DEVICE_OUT_SPEAKER" source="" ecnrcase="" busaddress="bus0_media_out" channelmap="" rate="" />
+    <device id="2" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus0_media_out" channelmap="" rate="" />
+    <device id="3" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus1_navigation_out" channelmap="" rate="" />
+    <device id="4" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus2_voice_command_out" channelmap="" rate="" />
+    <device id="5" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus3_call_ring_out" channelmap="" rate="" />
+    <device id="6" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus4_call_out" channelmap="" rate="" />
+    <device id="7" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus5_alarm_out" channelmap="" rate="" />
+    <device id="8" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus6_notification_out" channelmap="" rate="" />
+    <device id="9" type="AUDIO_DEVICE_OUT_BUS" source="" ecnrcase="" busaddress="bus7_system_sound_out" channelmap="" rate="" />
+    <device id="10" type="AUDIO_DEVICE_IN_BUS" source="" ecnrcase="" busaddress="bus8_esiri_ul_in" channelmap="" rate="" />
+    <device id="11" type="AUDIO_DEVICE_IN_BUS" source="" ecnrcase="" busaddress="bus9_alexa_ul_in" channelmap="" rate="" />
+    <device id="12" type="AUDIO_DEVICE_IN_BUS" source="" ecnrcase="" busaddress="bus10_native_vr_ul_in" channelmap="" rate="" />
+    <device id="13" type="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_MIC" ecnrcase="" busaddress="DefaultMic" channelmap="" rate="" />
+    <device id="14" type="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_VOICE_RECOGNITION" ecnrcase="Native_VR_Uplink" busaddress="Native_VR_Uplink" channelmap="" rate="" />
+    <device id="15" type="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_VOICE_RECOGNITION" ecnrcase="Projection_VR_Uplink" busaddress="Projection_VR_Uplink" channelmap="" rate="" />
+    <device id="16" type="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_VOICE_COMMUNICATION" ecnrcase="PhoneCall_Uplink" busaddress="Call_Uplink" channelmap="" rate="" />
+    <device id="17" type="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_UNPROCESSED" ecnrcase="" busaddress="VR_Raw_Uplink" channelmap="" rate="" />
+    <device id="18" type="AUDIO_DEVICE_IN_FM_TUNER" source="AUDIO_SOURCE_MIC" ecnrcase="" busaddress="Tuner_Uplink" channelmap="" rate="" />
+    <device id="19" type="AUDIO_DEVICE_IN_ECHO_REFERENCE" source="AUDIO_SOURCE_ECHO_REFERENCE" ecnrcase="" busaddress="EchoRef" channelmap="" rate="" />
+    <device id="20" type="AUDIO_DEVICE_IN_BUS" source="" ecnrcase="" busaddress="bus11_ipod_media_in" channelmap="" rate="" />
+  </devicesconf>
+  <alsaportsconf>
+    <port id="1" name="ea9harman,0" sndhwdev="ea9harman,0" vendorid="" channels="2" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="6" startthreshold="2304" stopthreshold="2304" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="2" name="ea9harman,1" sndhwdev="ea9harman,1" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="3" name="ea9harman,2" sndhwdev="ea9harman,2" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="4" name="ea9harman,3" sndhwdev="ea9harman,3" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="5" name="ea9harman,4" sndhwdev="ea9harman,4" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="6" name="ea9harman,5" sndhwdev="ea9harman,5" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="7" name="ea9harman,6" sndhwdev="ea9harman,6" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="8" name="ea9harman,7" sndhwdev="ea9harman,7" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="9" name="pcmExVirtualBus" sndhwdev="" vendorid="" channels="2" rate="48000" bitwidth="AUDIO_FORMAT_PCM_16_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="10" name="ea9harman,8" sndhwdev="ea9harman,8" vendorid="" channels="1" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="11" name="ea9harman,16" sndhwdev="ea9harman,16" vendorid="" channels="2" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="768" periodcount="3" startthreshold="1536" stopthreshold="2304" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="12" name="ea9harman,19" sndhwdev="ea9harman,19" vendorid="" channels="12" rate="48000" bitwidth="AUDIO_FORMAT_PCM_16_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="0b000000001111" />
+    <port id="13" name="ea9harman,17" sndhwdev="ea9harman,17" vendorid="" channels="12" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="0b000000001111" />
+    <port id="14" name="ea9harman,20" sndhwdev="ea9harman,20" vendorid="" channels="2" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="15" name="ea9harman,18" sndhwdev="ea9harman,18" vendorid="" channels="12" rate="48000" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" startthreshold="768" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="0" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="0b000000001111" />
+    <port id="16" name="pcmIPodIn_c" sndhwdev="" vendorid="05ac:12" channels="2" rate="48000" bitwidth="AUDIO_FORMAT_PCM_16_BIT" periodsize="384" periodcount="3" startthreshold="384" stopthreshold="1152" silencethreshold="0" silencesize="0" availmin="384" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+    <port id="17" name="pcmIPodIn_c" sndhwdev="" vendorid="05ac:12" channels="2" rate="44100" bitwidth="AUDIO_FORMAT_PCM_16_BIT" periodsize="441" periodcount="3" startthreshold="441" stopthreshold="1323" silencethreshold="0" silencesize="0" availmin="441" clock="100000000" access="SND_PCM_ACCESS_RW_INTERLEAVED" channelmap="" />
+  </alsaportsconf>
+  <moduleslist>
+    <module id="1" uuid="10001" name="sse_projection_call_dl_48k" type="MODULE_TYPE_EFFECT_BLOCK" rate="48000" channels="1" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="512" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="2" uuid="10011" name="sse_bt_call_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="8000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="3" uuid="10012" name="sse_bt_call_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="4" uuid="30002" name="bt_loopback_ul" type="MODULE_TYPE_LOOPBACK" rate="8000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="64" periodcount="3" inputportnum="1" outputportnum="1" threadcount="2" library="" />
+    <module id="5" uuid="30003" name="bt_loopback_ul" type="MODULE_TYPE_LOOPBACK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="2" library="" />
+    <module id="6" uuid="10007" name="sse_projection_call_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="8000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="7" uuid="10008" name="sse_projection_call_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="8" uuid="10006" name="sse_projection_call_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="9" uuid="10018" name="sse_native_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="10" uuid="10019" name="sse_native_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="11" uuid="10020" name="sse_native_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="512" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="12" uuid="30010" name="datacollector_call_ul" type="MODULE_TYPE_DATA_COLLECTOR" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="6" inputportnum="2" outputportnum="1" threadcount="" library="" />
+    <module id="13" uuid="30015" name="datacollector_vr_ul" type="MODULE_TYPE_DATA_COLLECTOR" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="6" inputportnum="2" outputportnum="1" threadcount="" library="" />
+    <module id="14" uuid="30020" name="connected_module_for_carplay_ul" type="MODULE_TYPE_CONNECT" rate="8000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="64" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="15" uuid="30021" name="connected_module_for_carplay_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="16" uuid="30022" name="connected_module_for_btcall_ul" type="MODULE_TYPE_CONNECT" rate="8000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="64" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="17" uuid="30023" name="connected_module_for_btcall_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="18" uuid="30025" name="connected_module_native_vr_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="19" uuid="30026" name="connected_module_native_vr_ul" type="MODULE_TYPE_CONNECT" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="192" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="20" uuid="30027" name="connected_module_native_vr_ul" type="MODULE_TYPE_CONNECT" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="21" uuid="30028" name="dispatcher_vr_ul" type="MODULE_TYPE_DATA_DISPATCHER" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" inputportnum="1" outputportnum="2" threadcount="1" library="" />
+    <module id="22" uuid="30029" name="connected_projection_vr_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="23" uuid="30030" name="connected_projection_vr_ul" type="MODULE_TYPE_CONNECT" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="192" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="24" uuid="30031" name="connected_projection_vr_ul" type="MODULE_TYPE_CONNECT" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="25" uuid="10029" name="sse_projection_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="26" uuid="10030" name="sse_projection_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="27" uuid="10031" name="sse_projection_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="512" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="28" uuid="10033" name="sse_esiri_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="29" uuid="10036" name="sse_alexa_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="30" uuid="10037" name="sse_internal_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="31" uuid="10038" name="sse_internal_vr_ul" type="MODULE_TYPE_EFFECT_BLOCK" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="256" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="/vendor/lib64/libaudioprocessingplugin-sse.so" />
+    <module id="32" uuid="30032" name="connected_esiri_vr_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="33" uuid="30033" name="connected_alexa_vr_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="34" uuid="30034" name="connected_internal_vr_ul" type="MODULE_TYPE_CONNECT" rate="16000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="128" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="35" uuid="30035" name="connected_internal_vr_ul" type="MODULE_TYPE_CONNECT" rate="24000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="192" periodcount="3" inputportnum="1" outputportnum="1" threadcount="" library="" />
+    <module id="36" uuid="30036" name="dispatcher_loop_ref" type="MODULE_TYPE_DATA_DISPATCHER" rate="48000" channels="2" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" inputportnum="1" outputportnum="3" threadcount="1" library="" />
+    <module id="37" uuid="30037" name="dispatcher_call_ul" type="MODULE_TYPE_DATA_DISPATCHER" rate="48000" channels="4" bitwidth="AUDIO_FORMAT_PCM_32_BIT" periodsize="384" periodcount="3" inputportnum="1" outputportnum="2" threadcount="1" library="" />
+  </moduleslist>
+  <pathconf>
+    <path name="bus0_media_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus0_media_out" outchmap="" to="[device]:ea9harman,0" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus1_navigation_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus1_navigation_out" outchmap="" to="[device]:ea9harman,1" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus2_voice_command_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus2_voice_command_out" outchmap="" to="[device]:ea9harman,2" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus3_call_ring_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus3_call_ring_out" outchmap="" to="[device]:ea9harman,3" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus4_call_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus4_call_out" outchmap="" to="[module]:sse_projection_call_dl_48k" inchmap="" />
+        <connection from="[module]:sse_projection_call_dl_48k" outchmap="" to="[device]:ea9harman,4" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus5_alarm_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus5_alarm_out" outchmap="" to="[device]:ea9harman,5" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus6_notification_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus6_notification_out" outchmap="" to="[device]:ea9harman,6" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus7_system_sound_out" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:bus7_system_sound_out" outchmap="" to="[device]:ea9harman,7" inchmap="" />
+      </connections>
+    </path>
+    <path name="ExVirtualInputBus" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:pcmExVirtualBus" outchmap="" to="[stream]:ExVirtualInputBus" inchmap="" />
+      </connections>
+    </path>
+    <path name="ExVirtualOutputBus" dir="playback" mode="" period="" rate="">
+      <connections>
+        <connection from="[stream]:ExVirtualOutputBus" outchmap="" to="[device]:pcmExVirtualBus" inchmap="" />
+      </connections>
+    </path>
+    <path name="DefaultMic" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,19" outchmap="" to="[stream]:DefaultMic" inchmap="" />
+      </connections>
+    </path>
+    <path name="Call_Uplink" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_call_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,18" outchmap="" to="[module]:datacollector_call_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_call_ul" outchmap="" to="[module]:dispatcher_call_ul" inchmap="" />
+        <connection from="[module]:dispatcher_call_ul" outchmap="0,4" to="[module]:connected_module_for_carplay_ul" inchmap="" />
+        <connection from="[module]:connected_module_for_carplay_ul" outchmap="" to="[module]:sse_projection_call_ul" inchmap="" />
+        <connection from="[module]:sse_projection_call_ul" outchmap="" to="[stream]:Call_Uplink" inchmap="" />
+      </connections>
+    </path>
+    <path name="Bt_Uplink_8k" dir="both" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_call_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,18" outchmap="" to="[module]:datacollector_call_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_call_ul" outchmap="" to="[module]:dispatcher_call_ul" inchmap="" />
+        <connection from="[module]:dispatcher_call_ul" outchmap="0,4" to="[module]:connected_module_for_btcall_ul" inchmap="" />
+        <connection from="[module]:connected_module_for_btcall_ul" outchmap="" to="[module]:sse_bt_call_ul" inchmap="" />
+        <connection from="[module]:sse_bt_call_ul" outchmap="" to="[tmodule]:bt_loopback_ul" inchmap="" />
+        <connection from="[tmodule]:bt_loopback_ul" outchmap="" to="[device]:ea9harman,8" inchmap="" />
+      </connections>
+    </path>
+    <path name="Bt_Uplink_16k" dir="both" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_call_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,18" outchmap="" to="[module]:datacollector_call_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_call_ul" outchmap="" to="[module]:dispatcher_call_ul" inchmap="" />
+        <connection from="[module]:dispatcher_call_ul" outchmap="0,4" to="[module]:connected_module_for_btcall_ul" inchmap="" />
+        <connection from="[module]:connected_module_for_btcall_ul" outchmap="" to="[module]:sse_bt_call_ul" inchmap="" />
+        <connection from="[module]:sse_bt_call_ul" outchmap="" to="[tmodule]:bt_loopback_ul" inchmap="" />
+        <connection from="[tmodule]:bt_loopback_ul" outchmap="" to="[device]:ea9harman,8" inchmap="" />
+      </connections>
+    </path>
+    <path name="Tuner_Uplink" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,16" outchmap="" to="[stream]:Tuner_Uplink" inchmap="" />
+      </connections>
+    </path>
+    <path name="Native_VR_Uplink" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_vr_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,17" outchmap="" to="[module]:datacollector_vr_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_vr_ul" outchmap="" to="[module]:dispatcher_vr_ul" inchmap="" />
+        <connection from="[module]:dispatcher_vr_ul" outchmap="0,4" to="[module]:connected_module_native_vr_ul" inchmap="" />
+        <connection from="[module]:connected_module_native_vr_ul" outchmap="" to="[module]:sse_native_vr_ul" inchmap="" />
+        <connection from="[module]:sse_native_vr_ul" outchmap="" to="[stream]:Native_VR_Uplink" inchmap="" />
+      </connections>
+    </path>
+    <path name="Projection_VR_Uplink" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_vr_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,17" outchmap="" to="[module]:datacollector_vr_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_vr_ul" outchmap="" to="[module]:dispatcher_vr_ul" inchmap="" />
+        <connection from="[module]:dispatcher_vr_ul" outchmap="0,4" to="[module]:connected_projection_vr_ul" inchmap="" />
+        <connection from="[module]:connected_projection_vr_ul" outchmap="" to="[module]:sse_projection_vr_ul" inchmap="" />
+        <connection from="[module]:sse_projection_vr_ul" outchmap="" to="[stream]:Projection_VR_Uplink" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus8_esiri_ul_in" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_vr_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,17" outchmap="" to="[module]:datacollector_vr_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_vr_ul" outchmap="" to="[module]:dispatcher_vr_ul" inchmap="" />
+        <connection from="[module]:dispatcher_vr_ul" outchmap="0,4" to="[module]:connected_esiri_vr_ul" inchmap="" />
+        <connection from="[module]:connected_esiri_vr_ul" outchmap="" to="[module]:sse_esiri_vr_ul" inchmap="" />
+        <connection from="[module]:sse_esiri_vr_ul" outchmap="" to="[stream]:bus8_esiri_ul_in" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus9_alexa_ul_in" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_vr_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,17" outchmap="" to="[module]:datacollector_vr_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_vr_ul" outchmap="" to="[module]:dispatcher_vr_ul" inchmap="" />
+        <connection from="[module]:dispatcher_vr_ul" outchmap="0,4" to="[module]:connected_alexa_vr_ul" inchmap="" />
+        <connection from="[module]:connected_alexa_vr_ul" outchmap="" to="[module]:sse_alexa_vr_ul" inchmap="" />
+        <connection from="[module]:sse_alexa_vr_ul" outchmap="" to="[stream]:bus9_alexa_ul_in" inchmap="" />
+      </connections>
+    </path>
+    <path name="bus10_native_vr_ul_in" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,2" to="[module]:datacollector_vr_ul" inchmap="2,2" />
+        <connection from="[device]:ea9harman,17" outchmap="" to="[module]:datacollector_vr_ul" inchmap="0,2" />
+        <connection from="[module]:datacollector_vr_ul" outchmap="" to="[module]:dispatcher_vr_ul" inchmap="" />
+        <connection from="[module]:dispatcher_vr_ul" outchmap="0,4" to="[module]:connected_internal_vr_ul" inchmap="" />
+        <connection from="[module]:connected_internal_vr_ul" outchmap="" to="[module]:sse_internal_vr_ul" inchmap="" />
+        <connection from="[module]:sse_internal_vr_ul" outchmap="" to="[stream]:bus10_native_vr_ul_in" inchmap="" />
+      </connections>
+    </path>
+    <path name="EchoRef" dir="capture" mode="" period="" rate="">
+      <connections>
+        <connection from="[device]:ea9harman,20" outchmap="" to="[module]:dispatcher_loop_ref" inchmap="" />
+        <connection from="[module]:dispatcher_loop_ref" outchmap="0,1" to="[stream]:EchoRef" inchmap="" />
+      </connections>
+    </path>
+  </pathconf>
+  <xi:include href="apconf.xml" />
+</audioRoutingConfiguration>
